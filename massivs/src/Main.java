@@ -35,21 +35,21 @@ public class Main {
             System.out.print(arr3[g] + ", ");
         }
         //задание 3
-        for (int s = 2; s <= arr.length; s--) {
+        for (int s = arr.length - 1; s >= 0; s--) {
             if (s == 0) {
                 System.out.println(arr[s]);
                 break;
             }
             System.out.print(arr[s] + ", ");
         }
-        for (int f = 2; f < arr2.length; f--) {
+        for (int f = arr2.length - 1; f >= 0; f--) {
             if (f == 0) {
                 System.out.println(arr2[f]);
                 break;
             }
             System.out.print(arr2[f] + ", ");
         }
-        for (int h = 3; h < arr3.length; h--) {
+        for (int h = arr3.length - 1; h >= 0; h--) {
             if (h == 0) {
                 System.out.println(arr3[h]);
                 break;
