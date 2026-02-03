@@ -2,7 +2,7 @@ import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
-        Product drell = new Product(1, "Дрель",2500, "Инструменты");
+        Product drell = new Product(1, "Дрель", 2500, "Инструменты");
         Product kreslo = new Product(2, "Кресло", 4000, "Мебель");
         Product kresloCopy = new Product(2, "Кресло", 4000, "Мебель");
         System.out.println(drell);

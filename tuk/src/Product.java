@@ -17,11 +17,15 @@ public class Product {
     public String toString() {
         return "Товар [артикул = " + this.id + ", Название = " + this.name + ", Цена = " + this.price + ", Категория = " + this.category + "]";
     }
+
     @Override
-    public boolean equals (Object o) {
-        if (this == o)
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
-        if (o == null || getClass() != o.getClass()) return false;
+            }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Product product = (Product) o;
         return id == product.id && Objects.equals(product.category, this.category);
     }
