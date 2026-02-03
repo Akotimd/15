@@ -17,6 +17,7 @@ public class Product {
     public String toString() {
         return "Товар [артикул = " + this.id + ", Название = " + this.name + ", Цена = " + this.price + ", Категория = " + this.category + "]";
     }
+    @Override
     public boolean equals (Object o) {
         if (this == o)
             return true;

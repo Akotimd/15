@@ -14,15 +14,14 @@ public class Order {
     public String toString() {
         return "Order[customer=" + customer + ", products=" + Arrays.toString(basket) + "]";
     }
-
+    @Override
     public boolean equals(Object obj) {
-        if (obj == null || getClass() != obj.getClass()) return false;      //
         Order ord = (Order) obj;
+        if (obj == null || getClass() != obj.getClass()) return false;      //
         if (!Objects.equals(customer, ord.customer)) return false;  //
         if (basket == null && ord.basket == null) return true;
-        if (basket.length == ord.basket.length) {
-            if (!Arrays.equals(basket, ord.basket)) return false;
-        } else return false;
-        return true;
+        if (basket == null || ord.basket == null) return false;
+        if (basket.length != ord.basket.length) return false;
+        return Arrays.equals(basket, ord.basket);
     }
 }
