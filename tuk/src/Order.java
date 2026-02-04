@@ -17,14 +17,14 @@ public class Order {
 
     @Override
     public boolean equals(Object obj) {
-        Order ord = (Order) obj;
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
+        Order ord = (Order) obj;
         if (!Objects.equals(customer, ord.customer)) {
-            return false;  //
+            return false;
         }
-        if (basket == null && ord.basket == null) {
+        if (basket == ord.basket) {
             return true;
         }
         if (basket == null || ord.basket == null) {
@@ -36,7 +36,13 @@ public class Order {
         for (int i = 0; i < basket.length; i++) {
             Product basketItem = basket[i];
             Product basketItem1 = ord.basket[i];
-            if (!Objects.equals(basketItem, basketItem1)) {
+            if (basketItem == null && basketItem1 == null) {
+                continue;
+            }
+            if (basketItem == null || basketItem1 == null) {
+                return false;
+            }
+            if (!basketItem.equals(basketItem1)) {
                 return false;
             }
         }
